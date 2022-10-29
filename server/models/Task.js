@@ -8,7 +8,7 @@ const TaskSchema = new Schema({
   dueDate: { type: Date },
   repeat: { type: Boolean, default: false },
   active: { type: Boolean, default: true },
-  lastCompleted: { typeDate },
+  lastCompleted: { type: Date },
   project: { type: Schema.Types.ObjectId, required: true },
 });
 
