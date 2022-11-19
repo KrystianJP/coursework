@@ -1,6 +1,6 @@
 const express = require("express");
-const passport = require("passport");
 const router = express.Router();
+const passport = require("passport");
 const authenticateToken = require("../authenticateToken");
 const jwt = require("jsonwebtoken");
 const { body, validationResult } = require("express-validator");
@@ -20,11 +20,7 @@ router.get("/user", authenticateToken, (req, res) => {
 });
 
 router.post("/login", function (req, res, next) {
-  if (req.user) {
-    res.redirect("/");
-  }
-
-  passport.authenticate("local", function (err, user, info) {
+  passport.authenticate("local", function (err, user) {
     if (err) {
       return next(err); // will generate a 500 error
     }

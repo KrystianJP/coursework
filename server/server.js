@@ -1,13 +1,12 @@
 const express = require("express");
 const apiRouter = require("./routes/api");
 require("dotenv").config();
-const passport = require("passport");
 const LocalStrategy = require("passport-local");
-const session = require("express-session");
+const bcrypt = require("bcryptjs");
 const User = require("./models/User");
 const mongoose = require("mongoose");
-const bcrypt = require("bcryptjs");
-const cookieParser = require("cookie-parser");
+const passport = require("passport");
+const session = require("express-session");
 
 // SETTING UP DATABASE
 const mongoDB = process.env.MONGODB_URI;
@@ -51,19 +50,19 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use(session({ secret: "cats", resave: false, saveUninitialized: true }));
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+  }),
+);
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 
 app.use("/api", apiRouter);
-app.get("/login", (req, res) => {
-  if (req.isAuthenticated()) {
-    return res.redirect("/");
-  }
-});
 
 app.use(function (req, res, next) {
   res.status(404).json({ error: "Page not found" });

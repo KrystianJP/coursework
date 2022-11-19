@@ -200,3 +200,11 @@ aside h2 {
   opacity: 0.8;
   cursor: pointer;
 }
+
+.errors-list {
+  padding-top: 10px;
+  padding-left: 0;
+}
+.errors-list li {
+  color: red;
+}
