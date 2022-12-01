@@ -8,8 +8,8 @@ const bcrypt = require("bcryptjs");
 const async = require("async");
 const User = require("../models/User");
 
-router.get("/", (req, res) => {
-  res.json({ message: "test" });
+router.get("/test", (req, res) => {
+  res.json({ message: "this is a prototype" });
 });
 
 router.get("/user", authenticateToken, (req, res) => {

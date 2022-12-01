@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+import Test from "./components/Test";
 import "./styles.css";
 import axios from "axios";
 
@@ -108,6 +109,8 @@ function App() {
         </header>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/test" element={<Test />} />
+
           <Route
             path="/login"
             element={!token ? <Login /> : <Navigate replace to="/" />}
