@@ -95,7 +95,7 @@ class App extends Component {
         window.location.href = "/login";
       })
       .catch((error) => {
-        console.error(error);
+        console.error(error.response.data);
       });
   }
 

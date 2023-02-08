@@ -35,7 +35,7 @@ class TaskEdit extends Component {
         window.location.href = "/";
       })
       .catch((error) => {
-        console.error(error);
+        console.error(error.response.data);
       });
   }
 
@@ -73,7 +73,7 @@ class TaskEdit extends Component {
         return;
       })
       .catch((error) => {
-        console.error(error);
+        console.error(error.response.data);
       });
   }
 
@@ -90,7 +90,7 @@ class TaskEdit extends Component {
         window.location.href = "/";
       })
       .catch((error) => {
-        console.error(error);
+        console.error(error.response.data);
       });
   }
 

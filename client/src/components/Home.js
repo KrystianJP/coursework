@@ -42,7 +42,7 @@ class Home extends Component {
         this.setState({ projects: response.data.projects, confirmMsg: false });
       })
       .catch((error) => {
-        console.error(error);
+        console.error(error.response.data);
       });
   }
 
@@ -166,7 +166,7 @@ class Home extends Component {
         this.getTasks();
       })
       .catch((error) => {
-        console.error(error);
+        console.error(error.response.data);
       });
   }
 
@@ -198,7 +198,7 @@ class Home extends Component {
           this.getTasks();
         })
         .catch((error) => {
-          console.error(error);
+          console.error(error.response.data);
         });
     } else {
       axios
@@ -207,7 +207,7 @@ class Home extends Component {
           this.getTasks();
         })
         .catch((error) => {
-          console.error(error);
+          console.error(error.response.data);
         });
     }
   }
@@ -224,7 +224,7 @@ class Home extends Component {
         this.setState({ tasks: response.data.tasks });
       })
       .catch((error) => {
-        console.error(error);
+        console.error(error.response.data);
       });
   }
 
@@ -279,7 +279,7 @@ class Home extends Component {
         this.getProjects();
       })
       .catch((error) => {
-        console.error(error);
+        console.error(error.response.data);
       });
   }
 
@@ -359,7 +359,7 @@ class Home extends Component {
         });
       })
       .catch((error) => {
-        console.error(error);
+        console.error(error.response.data);
       });
   }
 

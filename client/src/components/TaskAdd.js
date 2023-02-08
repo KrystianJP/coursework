@@ -29,7 +29,7 @@ class TaskAdd extends Component {
         window.location.href = "/";
       })
       .catch((error) => {
-        console.error(error);
+        console.error(error.response.data);
       });
   }
 
