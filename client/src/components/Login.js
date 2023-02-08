@@ -15,7 +15,7 @@ class Login extends Component {
     let body = { username: this.state.username, password: this.state.password };
 
     axios
-      .post("coursework-production.up.railway.app/api/login", body)
+      .post("/api/login", body)
       .then((response) => {
         if (!response.data.accessToken) {
           this.setState({ password: "", errors: [response.data.message] });
