@@ -66,7 +66,10 @@ app.use(cors());
 // Add headers before the routes are defined
 app.use(function (req, res, next) {
   // Website you wish to allow to connect
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:5000");
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://coursework-6qh1-git-main-krystianjp.vercel.app/",
+  );
 
   // Request methods you wish to allow
   res.setHeader(
