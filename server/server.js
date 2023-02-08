@@ -7,6 +7,7 @@ const User = require("./models/User");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const session = require("express-session");
+const cors = require("cors");
 
 // SETTING UP DATABASE
 const mongoDB = process.env.MONGODB_URI;
@@ -61,6 +62,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors());
 
 app.use("/api", apiRouter);
 
